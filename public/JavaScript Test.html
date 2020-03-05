@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://admin.smarterclick.co.uk/pages/developer-test-javascript-advanced/ -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Test</title>
+  <link rel="shortcut icon" href="https://admin.smarterclick.co.uk/images/favicon.ico">
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <!--[if lt IE 9]>-->
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="../assets/js/app.js"></script>
+</head>
+
+<body>
+
+
+<!-- Menu -->
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button data-target="#bs-example-navbar-collapse-6" data-toggle="collapse" class="navbar-toggle collapsed"
+                type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="https://admin.smarterclick.co.uk/" class="navbar-brand">
+          <img src="../assets/images/404-795.png" class="img-responsive">
+        </a>
+      </div>
+      <div id="bs-example-navbar-collapse-6" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="https://admin.smarterclick.co.uk/">Home</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+  </nav>
+</div>
+<!-- End Menu -->
+
+<div class="container">
+  <div class="well">
+    <h1>JavaScript Test - Creating a simple Path Selector.</h1>
+    <p>The purpose of this test is to build a simple tool that will allow us to extract a CSS selector path of any
+      element
+      within a page.</p>
+
+    <h3>Part 1 - Adding CSS and HTML to the page dynamically </h3>
+    <p>Write a function that will add some simple CSS into a pages header along with an ID</p>
+    <p>The CSS to add will be this:</p>
+    <pre>&lt;style id="smc-hover-css"&gt;
+smc-path-box{
+	position:fixed;
+	bottom:20px;
+	left:10px;
+	right:10px;
+	padding:3px;
+	font-size: 16px;
+	background-color: rgba(87, 12, 12, 0.8);
+	color: white;
+	z-index: 999999999;
+	text-align:center;
+}
+&lt;/style&gt;
+</pre>
+    <p>Also add the following HTML dynamically into the pages &lt;body&gt; tag:</p>
+    <pre>&lt;smc-path-box&gt;Selector Path: &lt;/smc-path-box&gt;
+</pre>
+
+    <hr>
+    <h3>Part 2 - Element Hover</h3>
+    <p>Next we want a function that when the mouse hovers over any given element (Ignoring the &lt;body&gt;) it adds the
+      attribute
+      <code>data-smc-hover="true"</code> to the element, and removes the attribute when not hoving over. </p>
+    <p>For example hovering over a &lt;div&gt; will turn it into
+      <code> &lt;div data-smc-hover="true"&gt; ... &lt;/div&gt; </code> and therefore we can then give it a red outline.
+    </p>
+    <p>
+      <em>Helpful Hint: You can edit your CSS function above to add the red outline via CSS to any element with the
+        data-smc-hover="true" attribute added using
+        <code>[data-smc-hover="true"]{ ... }</code> </em>
+    </p>
+
+    <hr>
+    <h3>Part 3 - Getting the elements path</h3>
+    <p>Now when a highlighted element is clicked we want to try and find it's selector path, or ID if it has one - then
+      output it's value to the
+      <code> &lt;smc-path-box&gt;Selector Path: &lt;/smc-path-box&gt; </code>
+    </p>
+    <p>Here are some example elements to hover over and try and get their CSS selector paths:</p>
+    <div class="row text-center" id="playground">
+      <div class="col-md-3">
+        <input class="form-control" name="test-input">
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-primary" id="my-button">A Button with ID</button>
+      </div>
+      <div class="col-md-2">
+        <a href="https://admin.smarterclick.co.uk/pages/developer-test-javascript-advanced/js-test-1.html">A hyper
+          Link</a>
+      </div>
+      <div class="col-md-4">
+        <img src="../assets/images/404-795.png" class="img-responsive" style="max-width:200px;margin:auto">
+      </div>
+    </div>
+
+    <hr>
+    <h3>Part 4 - Putting it all together</h3>
+    <p>Running your script will now mean any element that you hover over will have a red outline, and clicking on it
+      will show it's selected path at the bottom of the page.</p>
+    <p>
+      <a href="http://smc-img.s3.amazonaws.com/css-selector-paths.mov" target="_blank">Click here to see a working
+        version in action</a>
+    </p>
+
+    <div style="margin:100px 0 100px 0;">
+      <p>You will be marked on the following</p>
+      <ul>
+        <li>General neatness of your code</li>
+        <li>Smart use of functions and tidy variable use</li>
+        <li>Easy to read comments to help explain your code.</li>
+        <li>Extra points for Returning a path to the closest parents ID, instead of all the way to the &lt;body&gt;
+          tag
+        </li>
+      </ul>
+      <p>Feel free to use Stack Overflow, or other sites, to help you find useful and relavent code, but please make
+        sure you reference it in the comments</p>
+    </div>
+
+
+  </div>
+</div>
+
+
+<script src="../assets/js/jquery-1.11.1.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<!-- Your Code will go here: -->
+<script type="text/javascript">
+
+</script>
+
+
+</body>
+</html>
